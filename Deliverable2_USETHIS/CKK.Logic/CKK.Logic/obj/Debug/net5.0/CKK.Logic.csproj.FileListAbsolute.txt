@@ -10,3 +10,15 @@ C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\Deliverable2_USETHIS
 C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\Deliverable2_USETHIS\CKK.Logic\CKK.Logic\obj\Debug\net5.0\refint\CKK.Logic.dll
 C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\Deliverable2_USETHIS\CKK.Logic\CKK.Logic\obj\Debug\net5.0\CKK.Logic.pdb
 C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\Deliverable2_USETHIS\CKK.Logic\CKK.Logic\obj\Debug\net5.0\ref\CKK.Logic.dll
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Logic\bin\Debug\net5.0\CKK.Logic.deps.json
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Logic\bin\Debug\net5.0\CKK.Logic.dll
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Logic\bin\Debug\net5.0\CKK.Logic.pdb
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Logic\obj\Debug\net5.0\CKK.Logic.csproj.AssemblyReference.cache
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Logic\obj\Debug\net5.0\CKK.Logic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Logic\obj\Debug\net5.0\CKK.Logic.AssemblyInfoInputs.cache
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Logic\obj\Debug\net5.0\CKK.Logic.AssemblyInfo.cs
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Logic\obj\Debug\net5.0\CKK.Logic.csproj.CoreCompileInputs.cache
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Logic\obj\Debug\net5.0\CKK.Logic.dll
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Logic\obj\Debug\net5.0\refint\CKK.Logic.dll
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Logic\obj\Debug\net5.0\CKK.Logic.pdb
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Logic\obj\Debug\net5.0\ref\CKK.Logic.dll

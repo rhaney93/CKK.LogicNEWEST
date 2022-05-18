@@ -12,7 +12,7 @@ namespace CKK.TestsForStudents
             try
             {
                 //Assemble
-                Product product = new Product(234, "bbb", 9.2M);
+                Product product = new Product();
                 int expected = 54321;
                 //Act
                 product.SetId(expected);
@@ -32,7 +32,7 @@ namespace CKK.TestsForStudents
             try
             {
                 //Assemble
-                Product product = new Product(234, "bbb", 9.2M);
+                Product product = new Product();
                 var expected = "David Everton";
 
                 //Act
@@ -55,7 +55,7 @@ namespace CKK.TestsForStudents
             try
             {
                 //Assemble
-                Product product = new Product(234, "bbb", 9.2M);
+                Product product = new Product();
                 var expected = 4321.56754m;
 
                 //Act

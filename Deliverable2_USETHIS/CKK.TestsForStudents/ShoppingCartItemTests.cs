@@ -12,7 +12,7 @@ namespace CKK.TestsForStudents
             try
             {
                 //Assemble
-                Product testProduct = new Product(234, "bbb", 9.2M);
+                Product testProduct = new Product();
                 testProduct.SetId(1);
                 var cartItem = new ShoppingCartItem(testProduct, 1);
                 //Act
@@ -32,7 +32,7 @@ namespace CKK.TestsForStudents
             try
             {
                 //Assemble
-                Product testProduct = new Product(234, "bbb", 9.2M);
+                Product testProduct = new Product();
                 testProduct.SetId(2);
                 var expected = 34;
                 var cartItem = new ShoppingCartItem(testProduct, expected);
@@ -54,8 +54,8 @@ namespace CKK.TestsForStudents
             try
             {
                 //Assemble
-                var testProduct = new Product(234, "bbb", 9.2M);
-                var expected = new Product(234, "bbb", 9.2M);
+                var testProduct = new Product();
+                var expected = new Product();
                 var cartItem = new ShoppingCartItem(testProduct, 1);
                 //Act
                 cartItem.SetProduct(expected);
@@ -76,7 +76,7 @@ namespace CKK.TestsForStudents
             {
                 //Assemble
                 var expected = 23;
-                var cartItem = new ShoppingCartItem(new Product(234, "bbb", 9.2M), 2);
+                var cartItem = new ShoppingCartItem(new Product(), 2);
                 //Act
                 cartItem.SetQuantity(expected);
                 var actual = cartItem.GetQuantity();

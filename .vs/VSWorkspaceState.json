@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Deliverable2_USETHIS",
+    "\\Deliverable2_USETHIS\\CKK.Logic",
+    "\\Deliverable2_USETHIS\\CKK.TestsForStudents"
   ],
-  "SelectedNode": "\\C:\\Users\\Owner\\Source\\Repos\\CKK.LogicNEWEST",
+  "SelectedNode": "\\Deliverable2_USETHIS\\CKK.TestsForStudents\\CustomerTests.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -12,7 +12,7 @@ namespace CKK.TestsForStudents
             try
             {
                 //Assemble
-                Customer customer = new Customer(123, "234", "abc");
+                Customer customer = new Customer();
                 int expected = 54321;
                 //Act
                 customer.SetId(expected);
@@ -31,7 +31,7 @@ namespace CKK.TestsForStudents
             try
             {
                 //Assemble
-                Customer customer = new Customer(123, "234", "abc");
+                Customer customer = new Customer();
                 var expected = "David Everton";
 
                 //Act
@@ -53,7 +53,7 @@ namespace CKK.TestsForStudents
            // try
            // {
                 //Assemble
-                Customer customer = new Customer(123, "234", "abc");
+                Customer customer = new Customer();
                 var expected = "200 Washington";
 
                 //Act

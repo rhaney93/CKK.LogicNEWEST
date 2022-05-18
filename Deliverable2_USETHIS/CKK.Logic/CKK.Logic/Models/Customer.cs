@@ -12,13 +12,7 @@ namespace CKK.Logic.Models
         private string _Name;
         private string _Address;
 
-        public Customer(int Id, string Name, string Address)
-        {
-            _Id = Id;
-            _Name = Name;
-            _Address = Address;
-        }
-
+        
         public int GetId()
         {
             return _Id;

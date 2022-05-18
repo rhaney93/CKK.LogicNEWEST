@@ -12,12 +12,6 @@ namespace CKK.Logic.Models
         private string _Name;
         private decimal _Price;
 
-        public Product(int Id, string Name, decimal Price)
-        {
-            _Id = Id;
-            _Name = Name;
-            _Price = Price;
-        }
 
         public int GetId()
         {
