@@ -10,9 +10,12 @@ namespace CKK.Logic.Models
     {
         private int _Id;
         private string _Name;
-        private Product _Product1;
-        private Product _Product2;
-        private Product _Product3;
+        private static Product _Product1;
+        private static Product _Product2;
+        private static Product _Product3;
+
+       Product[] list = { _Product1, _Product2, _Product3 };
+
 
         public int GetId()
         {
@@ -36,23 +39,31 @@ namespace CKK.Logic.Models
 
         public void AddStoreItem(Product product)
         {
-            _Product1 = product;
-            _Product2 = product;
-            _Product3 = product;
-        }
+            if (product == _Product1)
+                return;
 
-        /*public void RemoveStoreItem(productNumber int)
-        {
-            
-        }*/
+            else if (product == _Product2)
+            {
+                _Product2 = _Product1;
+            }
+            else if (product == _Product3)
+            {
+                _Product3 = _Product1;
+            }
+
+        public void RemoveStoreItem(int productNumber)
+            {
+                
+            }
         public Product GetStoreItem(int productNumber)
-        {
-            
-        }
-        public Product FindStoreItemById(int Id)
-        {
-            return _Id;
-        }
+            {
 
+            }
+        public Product FindStoreItemById(int Id)
+            {
+                return list[Id];
+            }
+
+        }
     }
 }
