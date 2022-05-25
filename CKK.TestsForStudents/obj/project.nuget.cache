@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "TGpE6kX6sb6YTVEhPy886h4w3CqFeFUIj9BInHg+Pu2R14KUSAmos+4wXjhEkVC8VNFO94EnHN9upQ8gVRU2Cg==",
-  "success": false,
+  "dgSpecHash": "UEXrr6SitCa7L2BRDRKtfzRpLCmwV3SpUV47oCcT11EZzPOuCHRWRwQllIEpCzRiC2EOwd0xGUTIxRdWoDfDKQ==",
+  "success": true,
   "projectFilePath": "C:\\Users\\Owner\\source\\repos\\CKK.LogicNEWEST\\CKK.TestsForStudents\\CKK.TestsForStudents.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Owner\\.nuget\\packages\\coverlet.collector\\3.0.3\\coverlet.collector.3.0.3.nupkg.sha512",
@@ -99,15 +99,5 @@
     "C:\\Users\\Owner\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.3\\xunit.runner.visualstudio.2.4.3.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\xunitxml.testlogger\\3.0.66\\xunitxml.testlogger.3.0.66.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\Owner\\source\\repos\\CKK.LogicNEWEST\\CKK.Logic\\CKK.Logic.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\Owner\\source\\repos\\CKK.LogicNEWEST\\CKK.Logic\\CKK.Logic.csproj",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  "logs": []
 }

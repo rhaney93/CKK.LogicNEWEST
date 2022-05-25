@@ -11,7 +11,6 @@ namespace CKK.Logic.Models
         private int _Id;
         private string _Name;
         private decimal _Price;
-        internal static bool _Product1;
 
         public int GetId()
         {

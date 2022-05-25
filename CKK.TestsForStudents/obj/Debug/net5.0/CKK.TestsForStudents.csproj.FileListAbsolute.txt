@@ -1,0 +1,6 @@
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\CKK.TestsForStudents\bin\Debug\net5.0\CoverletSourceRootsMapping
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\CKK.TestsForStudents\obj\Debug\net5.0\CKK.TestsForStudents.csproj.AssemblyReference.cache
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\CKK.TestsForStudents\obj\Debug\net5.0\CKK.TestsForStudents.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\CKK.TestsForStudents\obj\Debug\net5.0\CKK.TestsForStudents.AssemblyInfoInputs.cache
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\CKK.TestsForStudents\obj\Debug\net5.0\CKK.TestsForStudents.AssemblyInfo.cs
+C:\Users\Owner\source\repos\CKK.LogicNEWEST\CKK.TestsForStudents\obj\Debug\net5.0\CKK.TestsForStudents.csproj.CoreCompileInputs.cache
