@@ -6026,8 +6026,8 @@
     },
     "CKK.Logic/1.0.0": {
       "type": "project",
-      "path": "../Deliverable2_USETHIS/CKK.Logic/CKK.Logic/CKK.Logic.csproj",
-      "msbuildProject": "../Deliverable2_USETHIS/CKK.Logic/CKK.Logic/CKK.Logic.csproj"
+      "path": "../CKK.Logic/CKK.Logic/CKK.Logic.csproj",
+      "msbuildProject": "../CKK.Logic/CKK.Logic/CKK.Logic.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6047,11 +6047,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Owner\\source\\repos\\CKK.LogicNEWEST\\CKK.TestsForStudents\\CKK.TestsForStudents.csproj",
+      "projectUniqueName": "C:\\Users\\Owner\\source\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.TestsForStudents\\CKK.TestsForStudents.csproj",
       "projectName": "CKK.TestsForStudents",
-      "projectPath": "C:\\Users\\Owner\\source\\repos\\CKK.LogicNEWEST\\CKK.TestsForStudents\\CKK.TestsForStudents.csproj",
+      "projectPath": "C:\\Users\\Owner\\source\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.TestsForStudents\\CKK.TestsForStudents.csproj",
       "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Owner\\source\\repos\\CKK.LogicNEWEST\\CKK.TestsForStudents\\obj\\",
+      "outputPath": "C:\\Users\\Owner\\source\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.TestsForStudents\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Owner\\AppData\\Roaming\\NuGet\\NuGet.Config",

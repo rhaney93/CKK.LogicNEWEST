@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Deliverable2_USETHIS\CKK.Logic\CKK.Logic\CKK.Logic.csproj" />
+    <ProjectReference Include="..\CKK.Logic\CKK.Logic\CKK.Logic.csproj" />
   </ItemGroup>
 
 </Project>
