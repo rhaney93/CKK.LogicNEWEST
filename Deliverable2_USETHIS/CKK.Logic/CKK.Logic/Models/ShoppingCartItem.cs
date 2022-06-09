@@ -43,5 +43,10 @@ namespace CKK.Logic.Models
         {
             return(_quantity * _product.GetPrice());
         }
+
+        public int GetId()
+        {
+            return _product.GetId();
+        }
     }
 }
