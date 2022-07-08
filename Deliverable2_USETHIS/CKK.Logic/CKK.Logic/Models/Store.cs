@@ -22,6 +22,9 @@ namespace CKK.Logic.Models
         public string Name { get; set; }
         public StoreItem AddStoreItem(Product product, int quantity)
         {
+            //I know that the issues here are because "GetId" and "SetQuantity" and the others don't exist any more
+            //but I can't figure out what they should be now to make this code work...
+
             var existingItem = FindStoreItemById(product.GetId());
             if (quantity <= 0)
             {
