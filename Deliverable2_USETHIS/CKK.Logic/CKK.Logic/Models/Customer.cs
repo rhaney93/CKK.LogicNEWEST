@@ -3,44 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CKK.Logic.Interfaces;
 
 namespace CKK.Logic.Models
 {
-    public class Customer
+    public class Customer : Entity
     {
-        private int _Id;
-        private string _Name;
-        private string _Address;
+        //Do i not need these because they're inherited from Entity now? see UML
 
-        
-        public int GetId()
-        {
-            return _Id;
-        }
+        //public int Id { get; set; }
+        //public string Name { get; set; }
+        public string Address { get; set; }
 
-        public void SetId(int Id)
-        {
-            _Id = Id;
-        }
-
-        public string GetName()
-        {
-            return _Name;
-        }
-
-        public void SetName(string Name)
-        {
-            _Name = Name;
-        }
-
-        public string GetAddress()
-        {
-            return _Address;
-        }
-
-        public void SetAddress(string Address)
-        {
-            _Address = Address;
-        }
     }
 }

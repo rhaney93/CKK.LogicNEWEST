@@ -17,36 +17,13 @@ namespace CKK.Logic.Models
             _product = product;
             _quantity = quantity;
         }
-
-        public int GetQuantity()
-        {
-            return _quantity;
-        }
-
-        public void SetQuantity(int quantity)
-        {
-            _quantity = quantity;
-        }
-
-
-        public void SetProduct(Product product)
-        {
-            _product = product;
-        }
-
-        public Product GetProduct()
-        {
-            return _product;
-        }
+        //Same question as in Customer
+        public Product Product { get; set; }
+        public int Quantity { get; set; }
 
         public decimal GetTotal()
         {
-            return(_quantity * _product.GetPrice());
-        }
-
-        public int GetId()
-        {
-            return _product.GetId();
+            return _quantity * Product.Price;
         }
     }
 }

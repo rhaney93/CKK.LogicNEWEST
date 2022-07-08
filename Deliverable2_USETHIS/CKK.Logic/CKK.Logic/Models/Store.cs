@@ -3,112 +3,63 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CKK.Logic.Interfaces;
 
 namespace CKK.Logic.Models
 {
-    public class Store
+    public class Store : Entity
     {
-        private int _Id;
-        private string _Name;
-        private Product _Product1;
-        private Product _Product2;
-        private Product _Product3;
-
-        public int GetId()
-        {
-            return _Id;
-        }
-
-        public void SetId(int Id)
-        {
-            _Id = Id;
-        }
-
-        public string GetName()
-        {
-            return _Name;
-        }
-
-        public void SetName(string Name)
-        {
-            _Name = Name;
-        }
-        public void AddStoreItem(Product product)
-        {
-           
-            if (_Product1 == null) 
-            {
-                _Product1 = product;
-            }
-            
-            else if (_Product2 == null)
-            {
-                _Product2 = product;
-            }
-
-            else if (_Product3 == null)
-            {
-                _Product3 = product;
-            }
-        }
-
-        public void RemoveStoreItem(int productNumber)
-        {
-            if (productNumber == 1 && _Product1 != null) 
-            {
-                _Product1 = null;
-            }
-
-            else if (productNumber == 2 && _Product2 != null)
-            {
-                _Product2 = null;
-            }
-
-            else if (productNumber == 3 && _Product3 != null)
-            {
-                _Product3 = null;
-            }
-        }
-
-        public Product GetStoreItem(int productNumber)
-        {
-            if (productNumber == 1) 
-            { 
-                return _Product1; 
-            }
-
-            else if (productNumber == 2) 
-            { 
-                return _Product2; 
-            }
-
-            else if (productNumber == 3) 
-            { 
-                return _Product3; 
-            }
-
-            return null;
-        }
-        public Product FindStoreItemById(int Id)
-        {
-            if (Id == _Product1.GetId()) 
-            { 
-                return _Product1; 
-            }
-
-            else if (Id == _Product2.GetId()) 
-            { 
-                return _Product2; 
-            }
-
-            else if (Id == _Product3.GetId()) 
-            { 
-                return _Product3; 
-            }
-
-            return null;
-        }
-
         
+        private List<StoreItem> _items;
+
+        public Store()
+        {
+            _items = new List<StoreItem>();
+        }
+
+        //Same question as in Customer
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public StoreItem AddStoreItem(Product product, int quantity)
+        {
+            var existingItem = FindStoreItemById(product.GetId());
+            if (quantity <= 0)
+            {
+                return null;
+            }
+            if (existingItem == null)
+            {
+                var newItem = new StoreItem(product, quantity);
+                _items.Add(newItem);
+                return newItem;
+            } 
+            else
+            {
+                existingItem.SetQuantity(existingItem.GetQuantity() + quantity);
+                return existingItem;
+            }
+        }
+
+        public StoreItem RemoveStoreItem(int id, int quantity)
+        {
+            var itemToRemove = FindStoreItemById(id);
+            if (itemToRemove != null)
+            {
+                var nextQuantity = Math.Max(itemToRemove.GetQuantity() - quantity, 0);
+                itemToRemove.SetQuantity(nextQuantity);
+            }
+
+            return itemToRemove;
+        }
+
+        public List<StoreItem> GetStoreItems()
+        {
+            return _items;
+        }
+        public StoreItem FindStoreItemById(int id)
+        {
+            return _items.Find(i => i.GetProduct().GetId() == id);
+        }
+       
     }
 }
