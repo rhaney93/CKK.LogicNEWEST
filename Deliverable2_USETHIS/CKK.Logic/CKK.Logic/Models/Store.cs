@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CKK.Logic.Exceptions;
 using CKK.Logic.Interfaces;
 
 namespace CKK.Logic.Models
 {
-    public class Store : Entity
+    public class Store : Entity, IStore
     {
-        
+
         private List<StoreItem> _items;
 
         public Store()
@@ -17,28 +15,25 @@ namespace CKK.Logic.Models
             _items = new List<StoreItem>();
         }
 
-        //Same question as in Customer
-        public int Id { get; set; }
-        public string Name { get; set; }
         public StoreItem AddStoreItem(Product product, int quantity)
         {
-            //I know that the issues here are because "GetId" and "SetQuantity" and the others don't exist any more
-            //but I can't figure out what they should be now to make this code work...
 
-            var existingItem = FindStoreItemById(product.GetId());
+            var existingItem = FindStoreItemById(product.Id);
+
             if (quantity <= 0)
             {
-                return null;
+                throw new InventoryItemStockTooLowException();
             }
+
             if (existingItem == null)
             {
                 var newItem = new StoreItem(product, quantity);
                 _items.Add(newItem);
                 return newItem;
-            } 
+            }
             else
             {
-                existingItem.SetQuantity(existingItem.GetQuantity() + quantity);
+                existingItem.Quantity = existingItem.Quantity + quantity;
                 return existingItem;
             }
         }
@@ -46,23 +41,33 @@ namespace CKK.Logic.Models
         public StoreItem RemoveStoreItem(int id, int quantity)
         {
             var itemToRemove = FindStoreItemById(id);
+
             if (itemToRemove != null)
             {
-                var nextQuantity = Math.Max(itemToRemove.GetQuantity() - quantity, 0);
-                itemToRemove.SetQuantity(nextQuantity);
+                var nextQuantity = Math.Max(itemToRemove.Quantity - quantity, 0);
+                itemToRemove.Quantity = nextQuantity;
+            }
+
+            if (quantity < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            if (itemToRemove == null)
+            {
+                throw new ProductDoesNotExistException();
             }
 
             return itemToRemove;
         }
-
+        public StoreItem FindStoreItemById(int id)
+        {
+            return _items.Find(i => i.Product.Id == id);
+        }
         public List<StoreItem> GetStoreItems()
         {
             return _items;
         }
-        public StoreItem FindStoreItemById(int id)
-        {
-            return _items.Find(i => i.GetProduct().GetId() == id);
-        }
-       
+
+
     }
 }

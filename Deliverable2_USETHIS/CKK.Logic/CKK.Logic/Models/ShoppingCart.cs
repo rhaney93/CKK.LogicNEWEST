@@ -1,85 +1,97 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CKK.Logic.Exceptions;
 
 namespace CKK.Logic.Models
 {
-    public class ShoppingCart
+    public class ShoppingCart : IShoppingCart
     {
-        private Customer _customer;
-        private List<ShoppingCartItem> _items;
+        public Customer Customer;
+        private List<ShoppingCartItem> Items;
 
         public ShoppingCart(Customer customer)
         {
-            _customer = customer;
-            _items = new List<ShoppingCartItem>();
+            Customer = customer;
+            Items = new List<ShoppingCartItem>();
         }
 
-        //Update ShoppingCart to have a public Property for Customer with get and set options
-        //Update ShoppingCart to have a public Property for Products with get and set options
-        public int Customer { get; set; }
-        public int Products { get; set; }
-
-
-
-
+        public int GetCustomerId { get; set; }
 
         public ShoppingCartItem GetProductById(int Id)
         {
-          return _items.Find(i => i.GetProduct().GetId() == Id);
+            if (Id < 0)
+            {
+                throw new InvalidIdException();
+            }
+            return Items.Find(i => i.Product.Id == Id);
         }
 
-        
+
         public ShoppingCartItem AddProduct(Product product, int quantity)
         {
-            if (quantity <= 0 || product == null) return null;
-            
-            var existingItem = GetProductById(product.GetId());
+
+            var existingItem = GetProductById(product.Id);
+
+            if (product.Id < 0)
+            {
+                throw new InvalidIdException();
+            }
+
             if (existingItem != null)
             {
-                existingItem.SetQuantity(existingItem.GetQuantity() + quantity);
+                existingItem.Quantity = existingItem.Quantity + quantity;
                 return existingItem;
             }
 
             else
             {
                 var newItem = new ShoppingCartItem(product, quantity);
-                _items.Add(newItem);
+                Items.Add(newItem);
                 return newItem;
             }
+
+
         }
         public ShoppingCartItem RemoveProduct(int id, int quantity)
         {
-            if (quantity <= 0) return null;
-            
+
+            if (quantity < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
             var productToRemove = GetProductById(id);
-            var nextQuantity = productToRemove.GetQuantity() - quantity;
+
+            if (productToRemove == null)
+            {
+                throw new ProductDoesNotExistException();
+            }
+            var nextQuantity = productToRemove.Quantity - quantity;
 
             if (nextQuantity > 0)
             {
-                productToRemove.SetQuantity(nextQuantity);
+                productToRemove.Quantity = nextQuantity;
                 return productToRemove;
-            } else
+            }
+            else
             {
-                _items.Remove(productToRemove);
-                productToRemove.SetQuantity(0);
+                Items.Remove(productToRemove);
+                productToRemove.Quantity = 0;
                 return productToRemove;
             }
         }
-        
+
 
         public decimal GetTotal()
         {
             decimal total = 0;
-            _items.ForEach(i => total += i.GetTotal());
+            Items.ForEach(i => total += i.GetTotal());
             return total;
         }
         public List<ShoppingCartItem> GetProducts()
         {
-            return _items;
+            return Items;
         }
     }
-    
+
 }

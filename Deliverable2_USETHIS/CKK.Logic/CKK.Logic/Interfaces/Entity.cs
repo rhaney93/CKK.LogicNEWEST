@@ -1,27 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CKK.Logic.Exceptions;
 
 namespace CKK.Logic.Interfaces
 {
     public abstract class Entity
     {
-        private int _id;
-        private string _name;
+        public int _id;
+        public string _name;
 
-        public int Id 
-        { 
+        public int Id
+        {
             get { return _id; }
-            set { _id = value; }
+            set
+            {
+                _id = value;
+                if (value < 0)
+                {
+                    throw new InvalidIdException();
+                }
+            }
+
         }
 
-        public string Name 
-        { 
+        public string Name
+        {
             get { return _name; }
-            set { _name = value; }  
+            set { _name = value; }
         }
-        
     }
 }

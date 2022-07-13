@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Owner\\source\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj": {}
+    "C:\\Users\\Owner\\OneDrive\\Desktop\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Owner\\source\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj": {
+    "C:\\Users\\Owner\\OneDrive\\Desktop\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Owner\\source\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj",
+        "projectUniqueName": "C:\\Users\\Owner\\OneDrive\\Desktop\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj",
         "projectName": "CKK.Logic",
-        "projectPath": "C:\\Users\\Owner\\source\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj",
+        "projectPath": "C:\\Users\\Owner\\OneDrive\\Desktop\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj",
         "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Owner\\source\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\obj\\",
+        "outputPath": "C:\\Users\\Owner\\OneDrive\\Desktop\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

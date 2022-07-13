@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YEZQrLKqjEDJ4M0ZAXRBvURv+W011urcVhYrgywXHdpxK3VFl9o52TPmQNVgOtv07zUjvVsx4oOB7aDhaJCe2Q==",
+  "dgSpecHash": "i/p2h9W9nY/xPCqkpJRk+mBnLvF8MvN2HI8alqO8yaPa1QSEAbaT15MA8zGvSHUequ8qCvGFscC1HI6ndGv2bQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Owner\\source\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.TestsForStudents\\CKK.TestsForStudents.csproj",
+  "projectFilePath": "C:\\Users\\Owner\\OneDrive\\Desktop\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.TestsForStudents\\CKK.TestsForStudents.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Owner\\.nuget\\packages\\coverlet.collector\\3.0.3\\coverlet.collector.3.0.3.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",
