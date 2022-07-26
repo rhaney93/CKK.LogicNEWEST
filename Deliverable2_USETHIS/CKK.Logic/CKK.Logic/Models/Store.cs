@@ -46,22 +46,41 @@ namespace CKK.Logic.Models
             {
                 var nextQuantity = Math.Max(itemToRemove.Quantity - quantity, 0);
                 itemToRemove.Quantity = nextQuantity;
+
+                if (nextQuantity < 0)
+                {
+                    throw new ProductDoesNotExistException();
+                }
+            }
+            else if (itemToRemove == null)
+            {
+                throw new ProductDoesNotExistException();
+            }
+            else
+            {
+                return itemToRemove;
             }
 
             if (quantity < 0)
             {
                 throw new ArgumentOutOfRangeException();
             }
-            if (itemToRemove == null)
-            {
-                throw new ProductDoesNotExistException();
-            }
+            //if (itemToRemove == null)
+            //{
+            //    throw new ProductDoesNotExistException();
+            //}
 
             return itemToRemove;
         }
         public StoreItem FindStoreItemById(int id)
         {
+            //if id is less than zero throw exception
+            if (id < 0)
+            {
+                throw new InvalidIdException();
+            }
             return _items.Find(i => i.Product.Id == id);
+            
         }
         public List<StoreItem> GetStoreItems()
         {
