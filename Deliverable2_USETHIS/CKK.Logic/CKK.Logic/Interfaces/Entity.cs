@@ -1,4 +1,5 @@
-﻿using CKK.Logic.Exceptions;
+﻿using System;
+using CKK.Logic.Exceptions;
 
 namespace CKK.Logic.Interfaces
 {

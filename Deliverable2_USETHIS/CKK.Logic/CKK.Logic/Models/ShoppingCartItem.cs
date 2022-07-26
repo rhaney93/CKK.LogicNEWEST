@@ -1,4 +1,5 @@
-﻿using CKK.Logic.Interfaces;
+﻿using System;
+using CKK.Logic.Interfaces;
 
 namespace CKK.Logic.Models
 {
