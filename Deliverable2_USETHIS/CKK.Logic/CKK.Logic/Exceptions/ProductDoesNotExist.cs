@@ -4,7 +4,13 @@ using CKK.Logic.Interfaces;
 
 namespace CKK.Logic.Exceptions
 {
-    public class ProductDoesNotExistException : Exception { }
+    public class ProductDoesNotExistException : Exception 
+    {
+        public ProductDoesNotExistException(string msg) : base(msg)
+        {
+
+        }
+    }
 }
 
 

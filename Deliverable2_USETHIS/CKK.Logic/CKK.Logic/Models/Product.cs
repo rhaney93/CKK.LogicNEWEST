@@ -5,15 +5,21 @@ namespace CKK.Logic.Models
 {
     public class Product : Entity
     {
+        private decimal _price;
         public decimal Price
+
         {
-            get { return Price; }
+            get { return _price; }
             set
             {
-                Price = value;
-                if (value > 0)
+                if (value >= 0)
                 {
-                    throw new ArgumentOutOfRangeException();
+                    _price = value;
+
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("Cannot be a negative number");
                 }
             }
 

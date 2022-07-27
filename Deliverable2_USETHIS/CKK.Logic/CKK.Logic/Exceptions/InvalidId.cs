@@ -4,6 +4,14 @@ using CKK.Logic.Interfaces;
 
 namespace CKK.Logic.Exceptions
 {
-    public class InvalidIdException : Exception { }
+    public class InvalidIdException : Exception 
+    {
+        public InvalidIdException(string msg) : base(msg)
+        {
+
+        }
+    }
+    
+    
 }
 

@@ -16,11 +16,15 @@ namespace CKK.Logic.Interfaces
             get { return quantity; }
             set
             {
-                quantity = value;
-                if (quantity < 0)
+                if (quantity > 0)
                 {
-                    throw new InventoryItemStockTooLowException();
+                        quantity = value;
+                        
                 }
+                else
+                    {
+                        throw new InventoryItemStockTooLowException("Cannot be a negative number");
+                    }
             }
         }
 

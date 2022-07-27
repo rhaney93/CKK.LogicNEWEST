@@ -16,7 +16,7 @@ namespace CKK.Logic.Interfaces
                 _id = value;
                 if (value < 0)
                 {
-                    throw new InvalidIdException();
+                    throw new InvalidIdException("Cannot be a negative number");
                 }
             }
 

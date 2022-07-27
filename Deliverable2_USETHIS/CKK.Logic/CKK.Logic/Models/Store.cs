@@ -22,7 +22,7 @@ namespace CKK.Logic.Models
 
             if (quantity <= 0)
             {
-                throw new InventoryItemStockTooLowException();
+                throw new InventoryItemStockTooLowException("Cannot be a negative number");
             }
 
             if (existingItem == null)
@@ -49,12 +49,12 @@ namespace CKK.Logic.Models
 
                 if (nextQuantity < 0)
                 {
-                    throw new ProductDoesNotExistException();
+                    throw new ProductDoesNotExistException("Cannot be a negative number");
                 }
             }
             else if (itemToRemove == null)
             {
-                throw new ProductDoesNotExistException();
+                throw new ProductDoesNotExistException("Cannot be a negative number");
             }
             else
             {
@@ -77,7 +77,7 @@ namespace CKK.Logic.Models
             //if id is less than zero throw exception
             if (id < 0)
             {
-                throw new InvalidIdException();
+                throw new InvalidIdException("Cannot be a negative number");
             }
             return _items.Find(i => i.Product.Id == id);
             

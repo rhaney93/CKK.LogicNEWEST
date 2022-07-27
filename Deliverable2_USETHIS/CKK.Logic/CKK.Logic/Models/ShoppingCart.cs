@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using CKK.Logic.Exceptions;
+using CKK.Logic.Interfaces;
 
 namespace CKK.Logic.Models
 {
@@ -16,12 +17,13 @@ namespace CKK.Logic.Models
         }
 
         public int GetCustomerId { get; set; }
+        //needs to be function not property
 
         public ShoppingCartItem GetProductById(int Id)
         {
             if (Id < 0)
             {
-                throw new InvalidIdException();
+                throw new InvalidIdException("Cannot be a negative number");
             }
             return Items.Find(i => i.Product.Id == Id);
         }
@@ -34,7 +36,7 @@ namespace CKK.Logic.Models
 
             if (product.Id < 0)
             {
-                throw new InvalidIdException();
+                throw new InvalidIdException("Cannot be a negative number");
             }
 
             if (existingItem != null)
@@ -57,14 +59,14 @@ namespace CKK.Logic.Models
 
             if (quantity < 0)
             {
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentOutOfRangeException("Cannot be a negative number");
             }
 
             var productToRemove = GetProductById(id);
 
             if (productToRemove == null)
             {
-                throw new ProductDoesNotExistException();
+                throw new ProductDoesNotExistException("Cannot be a negative number");
             }
             var nextQuantity = productToRemove.Quantity - quantity;
 
