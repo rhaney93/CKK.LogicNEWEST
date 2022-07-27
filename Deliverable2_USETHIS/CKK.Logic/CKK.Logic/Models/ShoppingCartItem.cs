@@ -5,16 +5,14 @@ namespace CKK.Logic.Models
 {
     public class ShoppingCartItem : InventoryItem
     {
-
-
         public ShoppingCartItem(Product product, int quantity)
         {
-            Product = product;
-            Quantity = quantity;
+            this.Product = product;
+            this.Quantity = quantity;
         }
         public decimal GetTotal()
         {
-            return Quantity * Product.Price;
+            return this.Quantity * this.Product.Price;
         }
     }
 }
