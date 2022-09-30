@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using CKK.Logic.Exceptions;
 using CKK.Logic.Interfaces;
+
 
 namespace CKK.Logic.Models
 {
     public class Store : Entity, IStore
     {
-
+        static int lastId = 1;
+        static int generateId()
+        {
+            return lastId++;
+        }
         private List<StoreItem> _items;
 
         public Store()
@@ -18,6 +24,11 @@ namespace CKK.Logic.Models
         public StoreItem AddStoreItem(Product product, int quantity)
         {
 
+            if (product.Id == 0)
+            {
+                product.Id = generateId();
+                
+            }
             var existingItem = FindStoreItemById(product.Id);
 
             if (quantity <= 0)
@@ -87,6 +98,11 @@ namespace CKK.Logic.Models
             return _items;
         }
 
+        public void DeleteStoreItem(int id)
+        {
+            _items = _items.Where(i => i.Product.Id != id).ToList();
+            
+        }
 
     }
 }

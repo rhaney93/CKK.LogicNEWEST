@@ -9,5 +9,9 @@ namespace CKK.Logic.Models
         StoreItem FindStoreItemById(int id);
         List<StoreItem> GetStoreItems();
         StoreItem RemoveStoreItem(int id, int quantity);
+
+        //TODO: Method should remove an item from inventory completely-- store no longer carries it
+        void DeleteStoreItem(int id);
+        
     }
 }
