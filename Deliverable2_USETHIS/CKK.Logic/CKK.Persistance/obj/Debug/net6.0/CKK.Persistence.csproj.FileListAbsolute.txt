@@ -1,0 +1,15 @@
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Persistance\bin\Debug\net6.0\CKK.Persistence.deps.json
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Persistance\bin\Debug\net6.0\CKK.Persistence.dll
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Persistance\bin\Debug\net6.0\CKK.Persistence.pdb
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Persistance\bin\Debug\net6.0\CKK.Logic.dll
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Persistance\bin\Debug\net6.0\CKK.Logic.pdb
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Persistance\obj\Debug\net6.0\CKK.Persistence.csproj.AssemblyReference.cache
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Persistance\obj\Debug\net6.0\CKK.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Persistance\obj\Debug\net6.0\CKK.Persistence.AssemblyInfoInputs.cache
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Persistance\obj\Debug\net6.0\CKK.Persistence.AssemblyInfo.cs
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Persistance\obj\Debug\net6.0\CKK.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Persistance\obj\Debug\net6.0\CKK.Persistence.csproj.CopyComplete
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Persistance\obj\Debug\net6.0\CKK.Persistence.dll
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Persistance\obj\Debug\net6.0\refint\CKK.Persistence.dll
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Persistance\obj\Debug\net6.0\CKK.Persistence.pdb
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Persistance\obj\Debug\net6.0\ref\CKK.Persistence.dll

@@ -1,6 +1,5 @@
-﻿using System;
-using System.Windows.Forms;
-using CKK.Logic.Models;
+﻿using CKK.Persistance.Models;
+
 
 namespace CKK.UI
 {
@@ -14,13 +13,14 @@ namespace CKK.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form1 loginForm = new Form1();
+            LoginPage loginForm = new LoginPage();
             Application.Run(loginForm);
 
-            Store store = new Store();
+            FileStore store = new FileStore();
+            store.Load();
             if (loginForm.DialogResult == DialogResult.OK)
             {
-                Application.Run(new Form2(store));
+                Application.Run(new InventoryMenu(store));
             }
         }
     }

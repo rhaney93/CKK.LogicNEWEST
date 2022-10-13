@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CKK.Logic.Models;
 
 namespace CKK.UI
 {
-    public partial class Form1 : Form
+    public partial class LoginPage : Form
     {
-        public Form1()
+        public LoginPage()
         {
             InitializeComponent();
+            this.textBox_Username.Text = "username";
+            this.textBox_Password.Text = "password";
         }
 
         private void button_Login_Click(object sender, EventArgs e)
@@ -35,5 +38,7 @@ namespace CKK.UI
                 this.DialogResult = DialogResult.Retry;
             }
         }
+
+        
     }
 }

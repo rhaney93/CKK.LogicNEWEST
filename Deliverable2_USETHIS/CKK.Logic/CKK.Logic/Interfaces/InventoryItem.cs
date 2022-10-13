@@ -4,21 +4,20 @@ using CKK.Logic.Models;
 
 namespace CKK.Logic.Interfaces
 {
+    [Serializable]
     public abstract class InventoryItem
     {
-
-        private Product product;
-        private int quantity;
+        private int _quantity;
 
         public Product Product;
         public int Quantity
         {
-            get { return quantity; }
+            get { return _quantity; }
             set
             {
                 if (value >= 0)
                 {
-                    quantity = value;  
+                    _quantity = value;  
                 }
                 else
                 {

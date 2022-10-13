@@ -11,6 +11,19 @@
         "runtime": {
           "bin/placeholder/CKK.Logic.dll": {}
         }
+      },
+      "CKK.Persistence/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "CKK.Logic": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CKK.Persistence.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CKK.Persistence.dll": {}
+        }
       }
     }
   },
@@ -19,11 +32,17 @@
       "type": "project",
       "path": "../CKK.Logic/CKK.Logic.csproj",
       "msbuildProject": "../CKK.Logic/CKK.Logic.csproj"
+    },
+    "CKK.Persistence/1.0.0": {
+      "type": "project",
+      "path": "../CKK.Persistance/CKK.Persistence.csproj",
+      "msbuildProject": "../CKK.Persistance/CKK.Persistence.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "CKK.Logic >= 1.0.0"
+      "CKK.Logic >= 1.0.0",
+      "CKK.Persistence >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -55,6 +74,9 @@
           "projectReferences": {
             "C:\\Users\\Owner\\OneDrive\\Desktop\\Visual Studios Stuff\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj": {
               "projectPath": "C:\\Users\\Owner\\OneDrive\\Desktop\\Visual Studios Stuff\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj"
+            },
+            "C:\\Users\\Owner\\OneDrive\\Desktop\\Visual Studios Stuff\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Persistance\\CKK.Persistence.csproj": {
+              "projectPath": "C:\\Users\\Owner\\OneDrive\\Desktop\\Visual Studios Stuff\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Persistance\\CKK.Persistence.csproj"
             }
           }
         }

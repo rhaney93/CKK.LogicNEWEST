@@ -3,6 +3,7 @@ using CKK.Logic.Interfaces;
 
 namespace CKK.Logic.Models
 {
+    [Serializable]
     public class Product : Entity
     {
         private decimal _price;
@@ -24,6 +25,13 @@ namespace CKK.Logic.Models
             }
 
 
+        }
+
+        public Product(decimal price, string name)
+        {
+            this.Price = price;
+            this.Name = name;
+            this.Id = 0;
         }
 
     }

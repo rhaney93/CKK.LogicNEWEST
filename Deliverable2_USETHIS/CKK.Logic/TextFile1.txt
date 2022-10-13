@@ -1,0 +1,9 @@
+˜<Form>
+  <ProductForm>
+    <NameField/>
+    <PriceField/>
+  </ProductForm>
+  <QuantityField/>
+</Form>
+
+AddStoreItem(new StoreItem(nameFieldValue, priceFieldValue), quantityFieldValue);
