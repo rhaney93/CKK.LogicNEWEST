@@ -171,6 +171,28 @@ namespace CKK.Persistance.Models
         public void DeleteStoreItem(int id)
         {
             Items = Items.Where(i => i.Product.Id != id).ToList();
+            this.Save();
+        }
+
+        public List<StoreItem> GetAllProductsByName(string name)
+        {
+            return this.GetStoreItems()
+                .FindAll(item => item.Name.ToLower().Contains(name.ToLower()))
+                .ToList();
+        }
+
+        public List<StoreItem> GetProductsByQuantity()
+        {
+            return this.GetStoreItems()
+                .OrderBy(item => item.Quantity)
+                .ToList();
+        }
+
+        public List<StoreItem> GetProductsByPrice()
+        {
+            return this.GetStoreItems()
+                .OrderBy(item => item.Price)
+                .ToList();
         }
     }
 }

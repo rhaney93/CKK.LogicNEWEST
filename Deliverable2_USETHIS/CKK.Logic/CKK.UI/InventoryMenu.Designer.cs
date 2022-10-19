@@ -69,6 +69,7 @@
             this.button_Search.Size = new System.Drawing.Size(251, 47);
             this.button_Search.TabIndex = 10;
             this.button_Search.Text = "Search";
+            this.button_Search.Click += new System.EventHandler(this.button_Search_Click);
             // 
             // lbInventoryList
             // 
@@ -88,6 +89,7 @@
             this.lbInventoryList.TabIndex = 7;
             this.lbInventoryList.UseCompatibleStateImageBehavior = false;
             this.lbInventoryList.View = System.Windows.Forms.View.Details;
+            this.lbInventoryList.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lbInventoryList_ColumnClick);
             this.lbInventoryList.SelectedIndexChanged += new System.EventHandler(this.lbInventoryList_SelectedIndexChanged);
             // 
             // columnHeader1
@@ -112,7 +114,6 @@
             // 
             // button_AddItem
             // 
-            this.button_AddItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.button_AddItem.Location = new System.Drawing.Point(27, 84);
             this.button_AddItem.Name = "button_AddItem";
             this.button_AddItem.Size = new System.Drawing.Size(251, 58);
@@ -123,7 +124,6 @@
             // 
             // button_DeleteItem
             // 
-            this.button_DeleteItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.button_DeleteItem.Location = new System.Drawing.Point(960, 84);
             this.button_DeleteItem.Name = "button_DeleteItem";
             this.button_DeleteItem.Size = new System.Drawing.Size(251, 58);
@@ -134,7 +134,6 @@
             // 
             // button_Refresh
             // 
-            this.button_Refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Refresh.Location = new System.Drawing.Point(649, 84);
             this.button_Refresh.Name = "button_Refresh";
             this.button_Refresh.Size = new System.Drawing.Size(251, 58);
@@ -155,7 +154,6 @@
             // 
             // button_Edit
             // 
-            this.button_Edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Edit.Location = new System.Drawing.Point(338, 84);
             this.button_Edit.Name = "button_Edit";
             this.button_Edit.Size = new System.Drawing.Size(251, 58);

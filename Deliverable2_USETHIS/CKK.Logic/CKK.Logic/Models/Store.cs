@@ -103,6 +103,25 @@ namespace CKK.Logic.Models
             _items = _items.Where(i => i.Product.Id != id).ToList();
             
         }
+        public List<StoreItem> GetAllProductsByName(string name)
+        {
+            return this.GetStoreItems()
+                .FindAll(item => item.Name.Contains(name))
+                .ToList();
+        }
 
+        public List<StoreItem> GetProductsByQuantity()
+        {
+            return this.GetStoreItems()
+                .OrderBy(item => item.Quantity)
+                .ToList();
+        }
+
+        public List<StoreItem> GetProductsByPrice()
+        {
+            return this.GetStoreItems()
+                .OrderBy(item => item.Price)
+                .ToList();
+        }
     }
 }

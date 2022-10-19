@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -50,12 +51,21 @@ namespace CKK.UI
         }
 
 
+
         private void RefreshList()
         {
-            lbInventoryList.Items.Clear();
+            
             List<StoreItem> storeItems = Store.GetStoreItems();
             this.Items = storeItems;
-            IEnumerable<ListViewItem> items = storeItems.Select(si =>
+         
+            this.ReloadList();
+        }
+
+        private void ReloadList()
+        {
+            lbInventoryList.Items.Clear();
+
+            IEnumerable<ListViewItem> items = this.Items.Select(si =>
             {
                 ListViewItem item = new ListViewItem(si.Id.ToString());
                 item.SubItems.Add(si.Name);
@@ -122,6 +132,32 @@ namespace CKK.UI
         private void button_Load_Click(object sender, EventArgs e)
         {
             this.Store.Load();
-        }        
+        }
+
+        private void button_Search_Click(object sender, EventArgs e)
+        {
+            var searchString = this.textBox_Search.Text;
+            this.Items = this.Store.GetAllProductsByName(searchString);
+            this.ReloadList();
+        }
+
+        private void lbInventoryList_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            var columnIndex = e.Column;
+
+            switch (columnIndex)
+            {
+                case 2:
+                    this.Items = this.Store.GetProductsByQuantity();
+                    this.ReloadList();
+                    break;
+                case 3:
+                    this.Items = this.Store.GetProductsByPrice();
+                    this.ReloadList();
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
