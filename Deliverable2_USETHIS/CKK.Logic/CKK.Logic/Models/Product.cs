@@ -7,6 +7,11 @@ namespace CKK.Logic.Models
     public class Product : Entity
     {
         private decimal _price;
+
+        
+        //Doesn't the shit below this already work???
+        //public decimal Price { get; set; }
+
         public decimal Price
 
         {

@@ -5,7 +5,7 @@ namespace CKK.Logic.Models
 {
     public interface IShoppingCart
     {
-        int GetCustomerId { get; set; }
+        //int GetCustomerId { get; set; }
 
         ShoppingCartItem AddProduct(Product product, int quantity);
         ShoppingCartItem GetProductById(int Id);

@@ -89,9 +89,7 @@ namespace CKK.UI
             }
         }
         
-        //I want this to open the same dialog box that opens when you click "ADD"
-        //then i want all the text boxes populated with the current values for the selected rows
-        //then it works exactly the same as "ADD"
+
         private void button_Edit_Click(object sender, EventArgs e)
         {
             if (this.selectedItem != null)
@@ -108,8 +106,6 @@ namespace CKK.UI
             }
         }
 
-
-        //this doesn't work and i'm not sure what i'm doing wrong
         private void button_DeleteItem_Click(object sender, EventArgs e)
         {
             if(this.selectedItem != null)
