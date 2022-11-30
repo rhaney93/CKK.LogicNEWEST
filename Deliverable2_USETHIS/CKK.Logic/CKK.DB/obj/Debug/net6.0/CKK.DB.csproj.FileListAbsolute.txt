@@ -1,0 +1,5 @@
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.DB\obj\Debug\net6.0\CKK.DB.csproj.AssemblyReference.cache
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.DB\obj\Debug\net6.0\CKK.DB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.DB\obj\Debug\net6.0\CKK.DB.AssemblyInfoInputs.cache
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.DB\obj\Debug\net6.0\CKK.DB.AssemblyInfo.cs
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.DB\obj\Debug\net6.0\CKK.DB.csproj.CoreCompileInputs.cache
