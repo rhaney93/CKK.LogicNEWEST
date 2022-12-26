@@ -21,7 +21,7 @@ namespace CKK.Logic.Interfaces
                 }
                 else
                 {
-                    throw new InventoryItemStockTooLowException("Cannot be a negative number");
+                    throw new InventoryItemStockTooLowException();
                 }
             }
         }

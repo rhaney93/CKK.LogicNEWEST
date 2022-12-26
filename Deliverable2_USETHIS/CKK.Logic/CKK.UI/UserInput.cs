@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CKK.DB.Interfaces;
 using CKK.Logic.Models;
 
 namespace CKK.UI
 {
     public partial class UserInput : Form
     {
-        private IStore Store;
-        private StoreItem? selectedItem;
+        private IProductRepository Store;
+        private Product? selectedItem;
 
-        public UserInput(IStore store, StoreItem? item = null)
+        public UserInput(IProductRepository store, Product? item = null)
         {
             Store = store;
             InitializeComponent();
@@ -38,15 +39,20 @@ namespace CKK.UI
 
             if (selectedItem == null)
             {
-                //Create a new constructor here for Product? 
-                Product newProduct = new Product(price, name);
-                Store.AddStoreItem(newProduct, quantity);
+                Product newProduct = new Product();
+                newProduct.Name = name;
+                newProduct.Price = price;
+                newProduct.Quantity = quantity;
+
+                Store.Add(newProduct);
             } else
             {
-                var productToUpdate = selectedItem.Product;
+                var productToUpdate = selectedItem;
                 productToUpdate.Name = name;
                 productToUpdate.Price = price;
-                Store.AddStoreItem(productToUpdate, quantity);
+                productToUpdate.Quantity = quantity;
+
+                Store.Update(productToUpdate);
             }
 
             this.DialogResult = DialogResult.OK;

@@ -39,7 +39,6 @@
             this.button_AddItem = new System.Windows.Forms.Button();
             this.button_DeleteItem = new System.Windows.Forms.Button();
             this.button_Refresh = new System.Windows.Forms.Button();
-            this.button_Load = new System.Windows.Forms.Button();
             this.button_Edit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -89,7 +88,6 @@
             this.lbInventoryList.TabIndex = 7;
             this.lbInventoryList.UseCompatibleStateImageBehavior = false;
             this.lbInventoryList.View = System.Windows.Forms.View.Details;
-            this.lbInventoryList.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lbInventoryList_ColumnClick);
             this.lbInventoryList.SelectedIndexChanged += new System.EventHandler(this.lbInventoryList_SelectedIndexChanged);
             // 
             // columnHeader1
@@ -142,16 +140,6 @@
             this.button_Refresh.UseVisualStyleBackColor = true;
             this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
             // 
-            // button_Load
-            // 
-            this.button_Load.Location = new System.Drawing.Point(29, 1365);
-            this.button_Load.Name = "button_Load";
-            this.button_Load.Size = new System.Drawing.Size(249, 58);
-            this.button_Load.TabIndex = 14;
-            this.button_Load.Text = "Load";
-            this.button_Load.UseVisualStyleBackColor = true;
-            this.button_Load.Click += new System.EventHandler(this.button_Load_Click);
-            // 
             // button_Edit
             // 
             this.button_Edit.Location = new System.Drawing.Point(338, 84);
@@ -168,7 +156,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1246, 1946);
             this.Controls.Add(this.button_Edit);
-            this.Controls.Add(this.button_Load);
             this.Controls.Add(this.button_Refresh);
             this.Controls.Add(this.button_DeleteItem);
             this.Controls.Add(this.button_AddItem);
@@ -192,7 +179,6 @@
         private Button button_AddItem;
         private Button button_DeleteItem;
         private Button button_Refresh;
-        private Button button_Load;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;

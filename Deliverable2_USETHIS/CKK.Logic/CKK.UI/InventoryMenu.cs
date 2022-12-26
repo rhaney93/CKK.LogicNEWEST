@@ -1,26 +1,15 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
+using CKK.DB.Interfaces;
 using CKK.Logic.Models;
-using CKK.Persistance.Models;
 
 namespace CKK.UI
 {
     public partial class InventoryMenu : Form
     {
-        private FileStore Store;
+        private IProductRepository Store;
 
         private int selectedIndex = -1;
-        private StoreItem? selectedItem
+        private Product? selectedItem
         {
             get { 
                 if (selectedIndex >= 0)
@@ -33,12 +22,12 @@ namespace CKK.UI
         }
         
 
-        public List<StoreItem> Items { get; private set; }
+        public List<Product> Items { get; private set; }
 
-        public InventoryMenu(FileStore store)
+        public InventoryMenu(IProductRepository store)
         {
             Store = store;
-            Items = new List<StoreItem>();
+            Items = new List<Product>();
             InitializeComponent();
 
             RefreshList();
@@ -55,7 +44,7 @@ namespace CKK.UI
         private void RefreshList()
         {
             
-            List<StoreItem> storeItems = Store.GetStoreItems();
+            List<Product> storeItems = Store.GetAll();
             this.Items = storeItems;
          
             this.ReloadList();
@@ -110,7 +99,7 @@ namespace CKK.UI
         {
             if(this.selectedItem != null)
             {
-                Store.DeleteStoreItem(this.selectedItem.Id);
+                Store.Delete(this.selectedItem.Id);
                 RefreshList();
             }
             else
@@ -125,35 +114,11 @@ namespace CKK.UI
             RefreshList();
         }
 
-        private void button_Load_Click(object sender, EventArgs e)
-        {
-            this.Store.Load();
-        }
-
         private void button_Search_Click(object sender, EventArgs e)
         {
             var searchString = this.textBox_Search.Text;
-            this.Items = this.Store.GetAllProductsByName(searchString);
+            this.Items = this.Store.GetByName(searchString);
             this.ReloadList();
-        }
-
-        private void lbInventoryList_ColumnClick(object sender, ColumnClickEventArgs e)
-        {
-            var columnIndex = e.Column;
-
-            switch (columnIndex)
-            {
-                case 2:
-                    this.Items = this.Store.GetProductsByQuantity();
-                    this.ReloadList();
-                    break;
-                case 3:
-                    this.Items = this.Store.GetProductsByPrice();
-                    this.ReloadList();
-                    break;
-                default:
-                    break;
-            }
         }
     }
 }

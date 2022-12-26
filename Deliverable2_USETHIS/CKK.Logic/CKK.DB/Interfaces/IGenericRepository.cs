@@ -2,7 +2,7 @@
 
 namespace CKK.DB.Interfaces
 {
-    internal interface IGenericRepository<T>
+    public interface IGenericRepository<T>
     {
         T GetById(int id);
         List<T> GetAll();

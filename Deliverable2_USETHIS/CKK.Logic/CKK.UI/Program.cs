@@ -1,5 +1,4 @@
-﻿using CKK.Persistance.Models;
-
+﻿using CKK.DB.UOW;
 
 namespace CKK.UI
 {
@@ -16,11 +15,14 @@ namespace CKK.UI
             LoginPage loginForm = new LoginPage();
             Application.Run(loginForm);
 
-            FileStore store = new FileStore();
-            store.Load();
+            // Create a new connection factory and UnitOfWork to connect to the DB
+            var factory = new DatabaseConnectionFactory();
+            var worker = new UnitOfWork(factory);
+
             if (loginForm.DialogResult == DialogResult.OK)
             {
-                Application.Run(new InventoryMenu(store));
+                // Ensure the proper repository is supplied to the UI!
+                Application.Run(new InventoryMenu(worker.Products));
             }
         }
     }

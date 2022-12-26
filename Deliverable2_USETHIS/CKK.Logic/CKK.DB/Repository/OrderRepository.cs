@@ -3,41 +3,69 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using CKK.DB.Interfaces;
 using CKK.Logic.Models;
+using Dapper;
+using Dapper.Contrib.Extensions;
 
 namespace CKK.DB.Repository
 {
     public class OrderRepository : IOrderRepository
     {
+
+        internal IConnectionFactory Connection { get; set; }
+
+        public OrderRepository(IConnectionFactory connection)
+        {
+            this.Connection = connection;
+        }
         public int Add(Order entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var insertStatement = "INSERT INTO Orders(OrderNumber, CustomerId, ShoppingCartId) values(@OrderNumber,@CustomerId,@ShoppingCartId); " +
+                    "SELECT CAST(SCOPE_IDENTITY() as int)";
+                var newOrderId = this.Connection.GetConnection.Query<int>(insertStatement, entity).SingleOrDefault();
+                entity.OrderId = newOrderId;
+            }
+            catch
+            {
+                return -1;
+            }
+
+            return entity.OrderId;
         }
 
-        public int Delete(int id)
+        public int Delete(int orderId)
         {
-            throw new NotImplementedException();
+            this.Connection.GetConnection.Delete(new Order() { OrderId = orderId });
+            return orderId;
         }
 
         public List<Order> GetAll()
         {
-            throw new NotImplementedException();
+            var connection = this.Connection.GetConnection;
+            return connection.Query<Order>("SELECT * FROM orders").ToList();
         }
 
-        public Order GetById(int id)
+        public Order GetById(int orderId)
         {
-            throw new NotImplementedException();
+            var connection = this.Connection.GetConnection;
+            return connection.Query<Order>("SELECT * FROM orders WHERE OrderId=@OrderId", new { OrderId = orderId }).FirstOrDefault();
         }
 
-        public Order GetOrderByCustomerId(int id)
+        public Order GetOrderByCustomerId(int customerId)
         {
-            throw new NotImplementedException();
+            var connection = this.Connection.GetConnection;
+            return connection.Query<Order>("SELECT * FROM orders WHERE CustomerId=@CustomerId", new { CustomerId = customerId })
+                .FirstOrDefault();
         }
 
         public int Update(Order entity)
         {
-            throw new NotImplementedException();
+            this.Connection.GetConnection.Update(entity);
+            return entity.CustomerId;
         }
     }
 }

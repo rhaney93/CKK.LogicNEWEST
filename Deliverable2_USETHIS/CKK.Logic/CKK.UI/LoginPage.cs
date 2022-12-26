@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CKK.Logic.Models;
-
-namespace CKK.UI
+﻿namespace CKK.UI
 {
     public partial class LoginPage : Form
     {

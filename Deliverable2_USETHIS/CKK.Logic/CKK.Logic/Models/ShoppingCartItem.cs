@@ -5,7 +5,7 @@ using CKK.Logic.Interfaces;
 namespace CKK.Logic.Models
 {
     [Serializable]
-    public class ShoppingCartItem : InventoryItem
+    public class ShoppingCartItem
     {
         public ShoppingCartItem(Product product, int quantity)
         {

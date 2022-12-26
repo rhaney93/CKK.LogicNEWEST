@@ -4,7 +4,7 @@ using CKK.Logic.Models;
 
 namespace CKK.DB.Interfaces
 {
-    internal interface IShoppingCartRepository
+    public interface IShoppingCartRepository
     {
         ShoppingCartItem AddToCart(string itemName, int quantity);
         int ClearCart(int shoppingCartId);
