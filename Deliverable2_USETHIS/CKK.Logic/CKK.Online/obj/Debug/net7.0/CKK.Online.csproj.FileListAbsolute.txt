@@ -1,0 +1,8 @@
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Online\obj\Debug\net7.0\CKK.Online.csproj.AssemblyReference.cache
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Online\obj\Debug\net7.0\CKK.Online.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Online\obj\Debug\net7.0\CKK.Online.AssemblyInfoInputs.cache
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Online\obj\Debug\net7.0\CKK.Online.AssemblyInfo.cs
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Online\obj\Debug\net7.0\CKK.Online.csproj.CoreCompileInputs.cache
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Online\obj\Debug\net7.0\CKK.Online.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Online\obj\Debug\net7.0\CKK.Online.RazorAssemblyInfo.cache
+C:\Users\Owner\OneDrive\Desktop\Visual Studios Stuff\School\repos\CKK.LogicNEWEST\Deliverable2_USETHIS\CKK.Logic\CKK.Online\obj\Debug\net7.0\CKK.Online.RazorAssemblyInfo.cs

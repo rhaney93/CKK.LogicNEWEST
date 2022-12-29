@@ -9,7 +9,7 @@ using CKK.DB.Interfaces;
 
 namespace CKK.DB.Interfaces
 {
-    internal interface IUnitOfWork
+    public interface IUnitOfWork
     {
         IProductRepository Products { get; }
         IOrderRepository Orders { get; }
