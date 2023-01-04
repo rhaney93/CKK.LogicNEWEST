@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using CKK.DB.Interfaces;
+using CKK.DB.Repository;
 using CKK.Logic.Models;
 using Dapper;
 using Dapper.Contrib.Extensions;
@@ -20,14 +21,14 @@ namespace CKK.DB.Repository
         {
             this.Connection = connection;
         }
-        public int Add(Order entity)
+        public async Task<int> Add(Order entity)
         {
             try
             {
                 var insertStatement = "INSERT INTO Orders(OrderNumber, CustomerId, ShoppingCartId) values(@OrderNumber,@CustomerId,@ShoppingCartId); " +
                     "SELECT CAST(SCOPE_IDENTITY() as int)";
-                var newOrderId = this.Connection.GetConnection.Query<int>(insertStatement, entity).SingleOrDefault();
-                entity.OrderId = newOrderId;
+                var result = await this.Connection.GetConnection.QueryAsync<int>(insertStatement, entity);
+                entity.OrderId = result.SingleOrDefault();
             }
             catch
             {
@@ -37,34 +38,36 @@ namespace CKK.DB.Repository
             return entity.OrderId;
         }
 
-        public int Delete(int orderId)
+        public async Task<int> Delete(int orderId)
         {
-            this.Connection.GetConnection.Delete(new Order() { OrderId = orderId });
+            await this.Connection.GetConnection.DeleteAsync(new Order() { OrderId = orderId });
             return orderId;
         }
 
-        public List<Order> GetAll()
+        public async Task<List<Order>> GetAll()
         {
             var connection = this.Connection.GetConnection;
-            return connection.Query<Order>("SELECT * FROM orders").ToList();
+            var result = await connection.QueryAsync<Order>("SELECT * FROM orders");
+            return result.ToList();
         }
 
-        public Order GetById(int orderId)
+        public async Task<Order> GetById(int orderId)
         {
             var connection = this.Connection.GetConnection;
-            return connection.Query<Order>("SELECT * FROM orders WHERE OrderId=@OrderId", new { OrderId = orderId }).FirstOrDefault();
+            var result = await connection.QueryAsync<Order>("SELECT * FROM orders WHERE OrderId=@OrderId", new { OrderId = orderId });
+            return result.FirstOrDefault();
         }
 
-        public Order GetOrderByCustomerId(int customerId)
+        public async Task<Order> GetOrderByCustomerId(int customerId)
         {
             var connection = this.Connection.GetConnection;
-            return connection.Query<Order>("SELECT * FROM orders WHERE CustomerId=@CustomerId", new { CustomerId = customerId })
-                .FirstOrDefault();
+            var result = await connection.QueryAsync<Order>("SELECT * FROM orders WHERE CustomerId=@CustomerId", new { CustomerId = customerId });
+            return result.FirstOrDefault();
         }
 
-        public int Update(Order entity)
+        public async Task<int> Update(Order entity)
         {
-            this.Connection.GetConnection.Update(entity);
+            await this.Connection.GetConnection.UpdateAsync(entity);
             return entity.CustomerId;
         }
     }

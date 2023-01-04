@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CKK.DB.Interfaces
 {
     public interface IGenericRepository<T>
     {
-        T GetById(int id);
-        List<T> GetAll();
-        int Add(T entity);
-        int Update(T entity);
-        int Delete(int id);
+        Task<T> GetById(int id);
+        Task<List<T>> GetAll();
+        Task<int> Add(T entity);
+        Task<int> Update(T entity);
+        Task<int> Delete(int id);
     }
 }

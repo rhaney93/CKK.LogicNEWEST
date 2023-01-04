@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using CKK.DB.Interfaces;
 using CKK.Logic.Models;
 using Dapper;
@@ -16,14 +17,14 @@ namespace CKK.DB.Repository
         {
             this.Connection = connection;
         }
-        public int Add(ShoppingCartItem entity)
+        public async Task<int> Add(ShoppingCartItem entity)
         {
             try
             {
                 var insertStatement = "INSERT INTO ShoppingCartItems(Quantity, ProductId, ShoppingCartId) values(@Quantity,@ProductId,@ShoppingCartId); " +
                     "SELECT CAST(SCOPE_IDENTITY() as int)";
-                var newShoppingCartId = this.Connection.GetConnection.Query<int>(insertStatement, entity).SingleOrDefault();
-                entity.ShoppingCartId = newShoppingCartId;
+                var result = await this.Connection.GetConnection.QueryAsync<int>(insertStatement, entity);
+                entity.ShoppingCartId = result.SingleOrDefault();
             }
             catch
             {
@@ -35,8 +36,6 @@ namespace CKK.DB.Repository
 
         public ShoppingCartItem AddToCart(string itemName, int quantity)
         {
-            //var connection = this.Connection.GetConnection;
-            //return connection.
             throw new NotImplementedException();
         }
 

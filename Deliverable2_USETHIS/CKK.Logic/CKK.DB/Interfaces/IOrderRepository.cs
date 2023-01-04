@@ -1,9 +1,10 @@
-﻿using CKK.Logic.Models;
+﻿using System.Threading.Tasks;
+using CKK.Logic.Models;
 
 namespace CKK.DB.Interfaces
 {
     public interface IOrderRepository : IGenericRepository<Order>
     {
-        Order GetOrderByCustomerId(int id);
+        Task<Order> GetOrderByCustomerId(int id);
     }
 }

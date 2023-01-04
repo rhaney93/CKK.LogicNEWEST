@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using CKK.Logic.Models;
 
 
@@ -6,12 +7,12 @@ namespace CKK.DB.Interfaces
 {
     public interface IShoppingCartRepository
     {
-        ShoppingCartItem AddToCart(string itemName, int quantity);
-        int ClearCart(int shoppingCartId);
-        decimal GetTotal(int ShoppingCartId);
-        List<ShoppingCartItem> GetProducts(int shoppingCartId);
+        Task<ShoppingCartItem> AddToCart(string itemName, int quantity);
+        Task<int> ClearCart(int shoppingCartId);
+        Task<decimal> GetTotal(int ShoppingCartId);
+        Task<List<ShoppingCartItem>> GetProducts(int shoppingCartId);
         void Ordered(int shoppingCartId);
-        int Update(ShoppingCartItem entity);
-        int Add(ShoppingCartItem entity);
+        Task<int> Update(ShoppingCartItem entity);
+        Task<int> Add(ShoppingCartItem entity);
     }
 }
