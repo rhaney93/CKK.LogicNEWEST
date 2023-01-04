@@ -41,11 +41,11 @@ namespace CKK.UI
 
 
 
-        private void RefreshList()
+        private async void RefreshList()
         {
             
-            List<Product> storeItems = Store.GetAll();
-            this.Items = storeItems;
+            List<Product> storeItems;
+            this.Items = await Store.GetAll();
          
             this.ReloadList();
         }
@@ -114,10 +114,10 @@ namespace CKK.UI
             RefreshList();
         }
 
-        private void button_Search_Click(object sender, EventArgs e)
+        private async void button_Search_Click(object sender, EventArgs e)
         {
             var searchString = this.textBox_Search.Text;
-            this.Items = this.Store.GetByName(searchString);
+            this.Items = await this.Store.GetByName(searchString);
             this.ReloadList();
         }
     }

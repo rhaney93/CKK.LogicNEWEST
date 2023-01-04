@@ -34,23 +34,24 @@ namespace CKK.DB.Repository
             return entity.ShoppingCartId;
         }
 
-        public ShoppingCartItem AddToCart(string itemName, int quantity)
+        public async Task<ShoppingCartItem> AddToCart(string itemName, int quantity)
         {
             throw new NotImplementedException();
         }
 
-        public int ClearCart(int shoppingCartId)
+        public async Task <int> ClearCart(int shoppingCartId)
         {
             throw new NotImplementedException();
         }
 
-        public List<ShoppingCartItem> GetProducts(int shoppingCartId)
+        public async Task<List<ShoppingCartItem>> GetProducts(int shoppingCartId)
         {
             var connection = this.Connection.GetConnection;
-            return connection.Query<ShoppingCartItem>("SELECT * FROM products").ToList();
+            var result = await connection.QueryAsync<ShoppingCartItem>("SELECT * FROM products");
+            return result.ToList();
         }
 
-        public decimal GetTotal(int ShoppingCartId)
+        public async Task <decimal> GetTotal(int ShoppingCartId)
         {
             throw new NotImplementedException();
         }
@@ -60,7 +61,7 @@ namespace CKK.DB.Repository
             throw new NotImplementedException();
         }
 
-        public int Update(ShoppingCartItem entity)
+        public async Task <int> Update(ShoppingCartItem entity)
         {
             this.Connection.GetConnection.Update(entity);
             return entity.ShoppingCartId;
