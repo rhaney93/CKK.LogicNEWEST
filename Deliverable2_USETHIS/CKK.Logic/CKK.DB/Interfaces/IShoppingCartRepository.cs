@@ -7,12 +7,9 @@ namespace CKK.DB.Interfaces
 {
     public interface IShoppingCartRepository
     {
-        Task<ShoppingCartItem> AddToCart(string itemName, int quantity);
-        Task<int> ClearCart(int shoppingCartId);
-        Task<decimal> GetTotal(int ShoppingCartId);
-        Task<List<ShoppingCartItem>> GetProducts(int shoppingCartId);
-        void Ordered(int shoppingCartId);
-        Task<int> Update(ShoppingCartItem entity);
-        Task<int> Add(ShoppingCartItem entity);
+        Task<ShoppingCartItem> AddToCart(Product product, int quantity);
+        Task<bool> ClearCart();
+        Task<decimal> GetTotal();
+        Task<List<ShoppingCartItem>> GetProducts();
     }
 }

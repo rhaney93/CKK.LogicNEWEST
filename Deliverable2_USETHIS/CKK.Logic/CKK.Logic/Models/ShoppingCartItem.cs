@@ -7,14 +7,8 @@ namespace CKK.Logic.Models
     [Serializable]
     public class ShoppingCartItem
     {
-        public ShoppingCartItem(Product product, int quantity)
-        {
-            this.Product = product;
-            this.Quantity = quantity;
-        }
-        public Product Product { get; set; }
+        public int Id { get; set; }
         public int ShoppingCartId { get; set; }
-        public int CustomerId { get; set; }
         public int ProductId { get; set; }
         private int quantity { get; set; }
         public int Quantity
@@ -34,10 +28,6 @@ namespace CKK.Logic.Models
                     throw new InventoryItemStockTooLowException();
                 }
             }
-        }
-        public decimal GetTotal()
-        {
-            return this.Quantity * this.Product.Price;
         }
     }
 }

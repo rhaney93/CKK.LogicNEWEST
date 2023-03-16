@@ -25,17 +25,15 @@ namespace CKK.DB.Repository
         {
             try
             {
-                var insertStatement = "INSERT INTO Orders(OrderNumber, CustomerId, ShoppingCartId) values(@OrderNumber,@CustomerId,@ShoppingCartId); " +
-                    "SELECT CAST(SCOPE_IDENTITY() as int)";
+                var insertStatement = "INSERT INTO Orders(OrderId, OrderNumber, CustomerId, ShoppingCartId) values(@OrderId,@OrderNumber,@CustomerId,@ShoppingCartId); " +
+                    "SELECT OrderId FROM Orders WHERE OrderId = @OrderId";
                 var result = await this.Connection.GetConnection.QueryAsync<int>(insertStatement, entity);
-                entity.OrderId = result.SingleOrDefault();
+                return result.SingleOrDefault();
             }
-            catch
+            catch (Exception e)
             {
                 return -1;
             }
-
-            return entity.OrderId;
         }
 
         public async Task<int> Delete(int orderId)

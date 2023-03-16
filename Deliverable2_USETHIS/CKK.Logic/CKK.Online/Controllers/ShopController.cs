@@ -1,4 +1,5 @@
 ﻿using CKK.DB.Interfaces;
+using CKK.Logic.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CKK.Online.Controllers
@@ -12,26 +13,41 @@ namespace CKK.Online.Controllers
             this.workManager = unit;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await workManager.Products.GetAll());
         }
 
-        public IActionResult ShoppingCart()
+        public async Task<IActionResult> ShoppingCart()
         {
-            return View(workManager.Products.GetAll());
+            return View(await workManager.ShoppingCarts.GetProducts());
         }
 
-        public IActionResult CheckOutCustomer([FromQuery] int orderId)
+        [Route("/Shop/ShoppingCart/CheckOut")]
+        public async Task<IActionResult> CheckOut()
         {
-           return View();
+            
+            
+            var newOrder = new Order();
+            newOrder.OrderId = Guid.NewGuid().GetHashCode();
+            newOrder.CustomerId = Guid.NewGuid().GetHashCode();
+            newOrder.ShoppingCartId = Guid.NewGuid().GetHashCode();
+            newOrder.OrderNumber = Guid.NewGuid().ToString();
+            
+            newOrder.OrderId = await workManager.Orders.Add(newOrder);
+            
+            await workManager.ShoppingCarts.ClearCart();
+            
+            return View(newOrder);
         }
 
         [HttpGet]
         [Route("/Shop/ShoppingCart/Add/{productId}")]
-        public IActionResult Add([FromRoute] int quantity)
+        public async Task<IActionResult> Add([FromRoute] int productId, [FromQuery] int quantity)
         {
-            return View();
+            var product = await workManager.Products.GetById(productId);
+
+            return View(await workManager.ShoppingCarts.AddToCart(product, quantity));
         }
     }
 }

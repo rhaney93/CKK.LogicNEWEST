@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CKK.DB.Interfaces;
+using CKK.Logic.Interfaces;
 using CKK.Logic.Models;
 using Dapper;
 using Dapper.Contrib.Extensions;
@@ -17,54 +18,37 @@ namespace CKK.DB.Repository
         {
             this.Connection = connection;
         }
-        public async Task<int> Add(ShoppingCartItem entity)
+
+        public async Task<ShoppingCartItem> AddToCart(Product product, int quantity)
         {
             try
             {
-                var insertStatement = "INSERT INTO ShoppingCartItems(Quantity, ProductId, ShoppingCartId) values(@Quantity,@ProductId,@ShoppingCartId); " +
-                    "SELECT CAST(SCOPE_IDENTITY() as int)";
-                var result = await this.Connection.GetConnection.QueryAsync<int>(insertStatement, entity);
-                entity.ShoppingCartId = result.SingleOrDefault();
+                var connection = this.Connection.GetConnection;
+                var result = await connection.InsertAsync(new ShoppingCartItem { ProductId = product.Id, Quantity = quantity, ShoppingCartId = 1 });
+                return connection.Get<ShoppingCartItem>(result);
             }
-            catch
+            catch (Exception ex)
             {
-                return -1;
+                Console.WriteLine(ex);
+                return null;
             }
-
-            return entity.ShoppingCartId;
         }
 
-        public async Task<ShoppingCartItem> AddToCart(string itemName, int quantity)
+        public async Task<bool> ClearCart()
         {
-            throw new NotImplementedException();
+            return await this.Connection.GetConnection.DeleteAllAsync<ShoppingCartItem>();
         }
 
-        public async Task <int> ClearCart(int shoppingCartId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<List<ShoppingCartItem>> GetProducts(int shoppingCartId)
+        public async Task<List<ShoppingCartItem>> GetProducts()
         {
             var connection = this.Connection.GetConnection;
-            var result = await connection.QueryAsync<ShoppingCartItem>("SELECT * FROM products");
+            var result = await connection.QueryAsync<ShoppingCartItem>("SELECT * FROM shoppingcartitems");
             return result.ToList();
         }
 
-        public async Task <decimal> GetTotal(int ShoppingCartId)
+        public async Task<decimal> GetTotal()
         {
             throw new NotImplementedException();
-        }
-
-        public void Ordered(int shoppingCartId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task <int> Update(ShoppingCartItem entity)
-        {
-            this.Connection.GetConnection.Update(entity);
-            return entity.ShoppingCartId;
         }
     }
 }

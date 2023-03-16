@@ -1,0 +1,11 @@
+﻿
+@model IEnumerable<CKK.Logic.Models.ShoppingCartItem>
+
+<div class="flex-container">
+    <div style="display: flex; flex: auto; flex-direction: row;">
+        @foreach (var item in Model)
+        {
+            <partial name="_CartProductCard" model="item" />
+        }
+    </div>
+</div>

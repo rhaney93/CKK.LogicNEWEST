@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Owner\\OneDrive\\Desktop\\Visual Studios Stuff\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj": {}
+    "C:\\Users\\Owner\\OneDrive\\Desktop\\Visual Studios Stuff\\C#\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Owner\\OneDrive\\Desktop\\Visual Studios Stuff\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj": {
+    "C:\\Users\\Owner\\OneDrive\\Desktop\\Visual Studios Stuff\\C#\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Owner\\OneDrive\\Desktop\\Visual Studios Stuff\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj",
+        "projectUniqueName": "C:\\Users\\Owner\\OneDrive\\Desktop\\Visual Studios Stuff\\C#\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj",
         "projectName": "CKK.Logic",
-        "projectPath": "C:\\Users\\Owner\\OneDrive\\Desktop\\Visual Studios Stuff\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj",
+        "projectPath": "C:\\Users\\Owner\\OneDrive\\Desktop\\Visual Studios Stuff\\C#\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\CKK.Logic.csproj",
         "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Owner\\OneDrive\\Desktop\\Visual Studios Stuff\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\obj\\",
+        "outputPath": "C:\\Users\\Owner\\OneDrive\\Desktop\\Visual Studios Stuff\\C#\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.Logic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

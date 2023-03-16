@@ -1,0 +1,13 @@
+﻿@model CKK.Logic.Models.ShoppingCartItem
+
+<div class="card" style="width: 18rem; padding: 5px;">
+    <div class="card-body">
+        <p class="card-text">Product ID: @Model.ProductId</p>
+        <p class="card-text">Quantity: @Model.Quantity</p>
+        <br />
+    </div>
+    <div class="card-footer">
+        <p class="num-spinner" id="spinner-@Model.Id" style="padding: 10px; width: 75%;">@Model.Quantity</p>
+    </div>
+</div>
+

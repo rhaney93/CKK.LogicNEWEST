@@ -17,7 +17,7 @@ namespace CKK.Persistance.Models
     {
         public readonly string FilePath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + Path.DirectorySeparatorChar + "Persistence" + Path.DirectorySeparatorChar + "StoreItems.dat";
         
-        //private List<StoreItem> Items;
+        private List<StoreItem> Items;
         static int IdCounter = 1;
         static int generateId()
         {
@@ -29,85 +29,85 @@ namespace CKK.Persistance.Models
             this.CreatePath();
             this.Items = new List<StoreItem>();
         }
-        
 
-        //public StoreItem AddStoreItem(Product product, int quantity)
-        //{
-        //    if (product.Id == 0)
-        //    {
-        //        product.Id = generateId();
-        //    }
-        //    var existingItem = FindStoreItemById(product.Id);
 
-        //    if (quantity <= 0)
-        //    {
-        //        throw new InventoryItemStockTooLowException("Cannot be a negative number");
-        //    }
+        public StoreItem AddStoreItem(Product product, int quantity)
+        {
+            if (product.Id == 0)
+            {
+                product.Id = generateId();
+            }
+            var existingItem = FindStoreItemById(product.Id);
 
-        //    if (existingItem == null)
-        //    {
-        //        var newItem = new StoreItem(product, quantity);
-        //        Items.Add(newItem);
-        //        this.Save();
-        //        return newItem;
-        //    }
-        //    else
-        //    {
-        //        // !!!: Removed the bit where we add the quantity in favor of just setting
-        //        //      to what the text field says.
-        //        existingItem.Quantity = quantity;
-        //        this.Save();
-        //        return existingItem;
-        //    }
-            
-        //}
+            if (quantity <= 0)
+            {
+                throw new InventoryItemStockTooLowException("Cannot be a negative number");
+            }
 
-        //public StoreItem FindStoreItemById(int id)
-        //{
-        //    if (id < 0)
-        //    {
-        //        throw new InvalidIdException("Cannot be a negative number");
-        //    }
-        //    return Items.Find(i => i.Product.Id == id);
-        //}
+            if (existingItem == null)
+            {
+                var newItem = new StoreItem(product, quantity);
+                Items.Add(newItem);
+                this.Save();
+                return newItem;
+            }
+            else
+            {
+                // !!!: Removed the bit where we add the quantity in favor of just setting
+                //      to what the text field says.
+                existingItem.Quantity = quantity;
+                this.Save();
+                return existingItem;
+            }
 
-        //public List<StoreItem> GetStoreItems()
-        //{
-        //    return Items;
-        //}
+        }
 
-        //public StoreItem RemoveStoreItem(int id, int quantity)
-        //{
-        //    var itemToRemove = FindStoreItemById(id);
+        public StoreItem FindStoreItemById(int id)
+        {
+            if (id < 0)
+            {
+                throw new InvalidIdException("Cannot be a negative number");
+            }
+            return Items.Find(i => i.Product.Id == id);
+        }
 
-        //    if (itemToRemove != null)
-        //    {
-        //        var nextQuantity = Math.Max(itemToRemove.Quantity - quantity, 0);
-        //        itemToRemove.Quantity = nextQuantity;
+        public List<StoreItem> GetStoreItems()
+        {
+            return Items;
+        }
 
-        //        if (nextQuantity < 0)
-        //        {
-        //            throw new ProductDoesNotExistException("Cannot be a negative number");
-        //        }
-        //    }
-        //    else if (itemToRemove == null)
-        //    {
-        //        throw new ProductDoesNotExistException("Cannot be a negative number");
-        //    }
-        //    else
-        //    {
-        //        return itemToRemove;
-        //    }
+        public StoreItem RemoveStoreItem(int id, int quantity)
+        {
+            var itemToRemove = FindStoreItemById(id);
 
-        //    if (quantity < 0)
-        //    {
-        //        throw new ArgumentOutOfRangeException();
-        //    }
-            
-        //    this.Save();
-        //    return itemToRemove;
-            
-        //}
+            if (itemToRemove != null)
+            {
+                var nextQuantity = Math.Max(itemToRemove.Quantity - quantity, 0);
+                itemToRemove.Quantity = nextQuantity;
+
+                if (nextQuantity < 0)
+                {
+                    throw new ProductDoesNotExistException("Cannot be a negative number");
+                }
+            }
+            else if (itemToRemove == null)
+            {
+                throw new ProductDoesNotExistException("Cannot be a negative number");
+            }
+            else
+            {
+                return itemToRemove;
+            }
+
+            if (quantity < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            this.Save();
+            return itemToRemove;
+
+        }
 
         public void Load()
         {
@@ -174,25 +174,25 @@ namespace CKK.Persistance.Models
             this.Save();
         }
 
-        //public List<StoreItem> GetAllProductsByName(string name)
-        //{
-        //    return this.GetStoreItems()
-        //        .FindAll(item => item.Name.ToLower().Contains(name.ToLower()))
-        //        .ToList();
-        //}
+        public List<StoreItem> GetAllProductsByName(string name)
+        {
+            return this.GetStoreItems()
+                .FindAll(item => item.Name.ToLower().Contains(name.ToLower()))
+                .ToList();
+        }
 
-        //public List<StoreItem> GetProductsByQuantity()
-        //{
-        //    return this.GetStoreItems()
-        //        .OrderBy(item => item.Quantity)
-        //        .ToList();
-        //}
+        public List<StoreItem> GetProductsByQuantity()
+        {
+            return this.GetStoreItems()
+                .OrderBy(item => item.Quantity)
+                .ToList();
+        }
 
-        //public List<StoreItem> GetProductsByPrice()
-        //{
-        //    return this.GetStoreItems()
-        //        .OrderBy(item => item.Price)
-        //        .ToList();
-        //}
+        public List<StoreItem> GetProductsByPrice()
+        {
+            return this.GetStoreItems()
+                .OrderBy(item => item.Price)
+                .ToList();
+        }
     }
 }

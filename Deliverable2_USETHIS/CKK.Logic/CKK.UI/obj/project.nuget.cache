@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iONatr/InerUSgvyt+8Xbgbrwr0NybSbI1q5q0ekiVyOlraAkvEborRK7RzJB1mf7HrySZCqFOPHPuCZ3SW6Ag==",
+  "dgSpecHash": "1ERMAW8mxia+MwP6L2X5RiHwlt7xtKrboHNpEYLEZePX46oWwqpupg1bDEeqQutiObXFYvDlK0v3X+CjtcrQ7Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Owner\\OneDrive\\Desktop\\Visual Studios Stuff\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.UI\\CKK.UI.csproj",
+  "projectFilePath": "C:\\Users\\Owner\\OneDrive\\Desktop\\Visual Studios Stuff\\C#\\School\\repos\\CKK.LogicNEWEST\\Deliverable2_USETHIS\\CKK.Logic\\CKK.UI\\CKK.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Owner\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",
